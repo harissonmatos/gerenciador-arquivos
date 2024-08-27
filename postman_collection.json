@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "25ed0d39-720b-46fa-9bf2-2e2dd943d85c",
+		"name": "Gerenciador de arquivos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3496196"
+	},
+	"item": [
+		{
+			"name": "Listar Arquivos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/listar?path=/app&filter=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"listar"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/app"
+						},
+						{
+							"key": "filter",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renomear Arquivo ou Pasta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"oldPath\": \"/app/teste.txt\",\n\t\"newPath\": \"/app/teste2.csv\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8001/renomear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"renomear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Arquivo ou Pasta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"path\": \"/caminho/para/excluir\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8001/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mover Arquivo ou Pasta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"oldPath\": \"/app/teste2.csv\",\n\t\"newPath\": \"/teste2.csv\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8001/mover",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"mover"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Copiar Arquivo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sourcePath\": \"/teste2.csv\",\n\t\"destinationPath\": \"/app/teste.txt\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8001/copiar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"copiar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
