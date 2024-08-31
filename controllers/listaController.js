@@ -24,6 +24,8 @@ const lista = async (req, res) => {
       files = files.filter(file => minimatch(file, filter));
     }
 
+    files = files.map((file) => {return {name: file}});
+
     res.json({ path: absolutePath, files });
   } catch (error) {
     console.error('Erro ao listar arquivos:', error);
